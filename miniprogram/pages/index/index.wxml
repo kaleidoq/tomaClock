@@ -1,0 +1,29 @@
+<!-- index.wxml -->
+<view class="container" hidden="{{!time_start}}">
+  <view class="slider">
+    <slider selected-color="#ff5556" bindchange="slider1change" max="60" min="1" show-value />
+  </view>
+  <view class="slider_text">接下来的 {{absorbTime}} 分钟内，你将保持专注</view>
+  <view class="task_items">
+    <view class="task_item" wx:for="{{taskArr}}" wx:key="item" bindtap="clickCate" data-index="{{index}}">
+      <image src="../../static/{{item.icon}}"></image>
+      <text class='cate_text {{index == cateActive ? "cate_text_active":" " }}'>{{item.text}}</text>
+    </view>
+  </view>
+  <button class="btn_start" bindtap="start">开始专注</button>
+</view>
+<view class="clock" hidden="{{time_start}}" style="height:{{clockHeight}}rpx">
+  <view class="progress">
+    <canvas type="2d" class="progress_start" id="progress_start"></canvas>
+    <canvas type="2d" class="progress_time" id="progress_time"></canvas>
+    <text class="progress_text">{{timeStr}}</text>
+  </view>
+  <view class='btns'>
+    <view class="okbtn" bindtap="cancle" wx:if="{{okShow}}">返回</view>
+    <view class="pausebtn" bindtap="pause" wx:if="{{pauseShow}}">暂停</view>
+    <view class="continueCancleBtn" wx:if="{{continueShow}}">
+      <view class="continueBtn" bindtap="continue">继续</view>
+      <view class="cancleBtn" bindtap="cancle">放弃</view>
+    </view>
+  </view>
+</view>

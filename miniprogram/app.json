@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ff5556",
+    "navigationBarTitleText": "番茄钟",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "red",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text":"番茄钟",
+        "iconPath": "./static/clock_copy.png",
+        "selectedIconPath": "./static/clock.png"
+      },
+      {
+        "pagePath":"pages/logs/logs",
+        "text":"统计",
+        "iconPath": "./static/daibanshixiang_copy.png",
+        "selectedIconPath": "./static/daibanshixiang.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

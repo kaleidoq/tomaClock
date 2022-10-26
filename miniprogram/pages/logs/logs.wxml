@@ -1,0 +1,24 @@
+<!-- logs.wxml -->
+<view class="logs">
+  <view class="sum" wx:for="{{sum}}" wx:key="name">
+    <viwe class="item-title">{{item.title}}</viwe>
+    <view class="item-val">{{item.val}}</view>
+  </view>
+</view>
+<view class="detail">
+  <view class="detail-title">
+    <view class="detail-title-text">分类统计</view>
+    <view class="detail-title-type">
+      <text class="{{activeIndex==0?'active':''}}" bindtap="changeType" data-index="0">今日</text>
+      |
+      <text class="{{activeIndex==1?'active':''}}" bindtap="changeType" data-index="1">历史</text>
+    </view>
+  </view>
+  <view class="detail-list">
+    <view class="list-items" wx:for="{{list}}" wx:key="item">
+      <view>{{item.data}}</view>
+      <view>{{taskArr[item.cate]}}</view>
+      <view style="width: 130rpx;text-align: right;">{{item.time}}</view>
+    </view>
+  </view>
+</view>
